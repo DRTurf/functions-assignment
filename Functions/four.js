@@ -48,5 +48,9 @@ function calculateTax(income){
         return result;
     }
 }
-const income= 3000000
-console.log(`Your tax amount is ${calculateTax(income)}`);
+
+console.log(`Your tax amount is ${calculateTax(3000000)}`);
+console.log(`Your tax amount is ${calculateTax(1400000)}`);
+console.log(`Your tax amount is ${calculateTax(3090000)}`);
+console.log(`Your tax amount is ${calculateTax(11300000)}`);
+
