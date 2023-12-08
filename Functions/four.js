@@ -21,7 +21,7 @@ function calculateTax(income){
        return thirtyPercent()
     }
     function noTax(){
-        console.log("Income no taxable");
+        console.log("Income not taxable");
     }
     function fivePercent(){
         const result=(income*0.05);
