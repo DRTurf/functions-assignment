@@ -1,56 +1,33 @@
 function calculateTax(income){
+    let rate;
     if(income>=0 && income<=250000){
-       return noTax()
+       console.log("Income not taxable");
+       return;
     }
-    if(income>250000 && income<=500000){
-       return fivePercent()
+    else if(income>250000 && income<=500000){
+       rate=0.5;
     }
-    if(income>500000 && income<=750000){
-       return tenPercent()
+    else if(income>500000 && income<=750000){
+       rate=0.1;
     }
-    if(income>750000 && income<=1000000){
-       return fifteenPercent()
+    else if(income>750000 && income<=1000000){
+       rate=0.15;
     }
-    if(income>1000000 && income<=1250000){
-       return twentyPercent()
+    else if(income>1000000 && income<=1250000){
+        rate=0.20;
     }
-    if(income>1250000 && income<=1500000){
-       return twentyFivePercent()
+    else if(income>1250000 && income<=1500000){
+        rate=0.25;
     }
-    if(income>1500000){
-       return thirtyPercent()
+    else if(income>1500000){
+        rate=0.3;
     }
-    function noTax(){
-        console.log("Income not taxable");
-    }
-    function fivePercent(){
-        const result=(income*0.05);
-        return result;
-    }
-    function tenPercent(){
-        const result=(income*0.1);
-        return result;
-    }
-    function fifteenPercent(){
-        const result=(income*0.15);
-        return result;
-    }
-    function twentyPercent(){
-        const result=(income*0.2);
-        return result;
-    }
-    function twentyFivePercent(){
-        const result=(income*0.25);
-        return result;
-    }
-    function thirtyPercent(){
-        const result=(income*0.3);
-        return result;
+    return function(){
+        return rate*income;
     }
 }
 
-console.log(`Your tax amount is ${calculateTax(3000000)}`);
-console.log(`Your tax amount is ${calculateTax(1400000)}`);
-console.log(`Your tax amount is ${calculateTax(3090000)}`);
-console.log(`Your tax amount is ${calculateTax(11300000)}`);
-
+console.log(`Your tax amount is ${calculateTax(300000)()}`);
+console.log(`Your tax amount is ${calculateTax(1400000)()}`);
+console.log(`Your tax amount is ${calculateTax(3090000)()}`);
+console.log(`Your tax amount is ${calculateTax(11300000)()}`);
