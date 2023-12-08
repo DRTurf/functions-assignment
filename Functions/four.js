@@ -5,7 +5,7 @@ function calculateTax(income){
        return;
     }
     else if(income>250000 && income<=500000){
-       rate=0.5;
+       rate=0.05;
     }
     else if(income>500000 && income<=750000){
        rate=0.1;
